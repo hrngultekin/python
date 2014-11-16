@@ -1,4 +1,4 @@
 pisi-paket
 ======
 
-güncellenen veya yeni eklenen pisi paketleri
+güncellenen veya yeni eklenen pisi paketleri burada
