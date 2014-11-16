@@ -1,4 +1,4 @@
-deneme
+pisi-paket
 ======
 
-deneme
+güncellenen veya yeni eklenen pisi paketleri
