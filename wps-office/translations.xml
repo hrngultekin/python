@@ -1,9 +1,0 @@
-<PISI>
-    <Source>
-        <Name>wps-office</Name>
-        <Summary xml:lang="tr">Kingsoft Ofis Yazılımı</Summary>
-        <Description xml:lang="tr">Kingsoft Ofis çalışmalarınızda yardımcı sunum,kelime işlemci ve hesap tablosu yazılımını içerir</Description>
-    </Source>
-</PISI>
-
-<!-- By PiSiDo 2.0.0 -->
