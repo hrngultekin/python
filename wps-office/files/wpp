@@ -1,0 +1,49 @@
+#!/bin/bash
+
+gOpt=
+gTemplateExt=("dpt" "pot" "potx")
+gBinPath=$(dirname "$0")
+if [ -d "${gBinPath}/office6" ]; then
+	gInstallPath=${gBinPath}
+else
+	gInstallPath=/usr/share/kingsoft/wps-office
+fi
+gApp=wpp
+
+function parse_arg()
+{
+	if [ $# -eq 1 ] ; then
+		ext="${1##*.}"
+		if [ "" = "${ext}" ] ; then
+			return 0
+		fi
+
+		for i in ${gTemplateExt}
+		do
+			if [ "${ext}" = "${i}" ] ; then
+				gOpt=-t
+			fi
+		done
+	fi
+}
+
+function run()
+{
+	oldPwd="${PWD}"
+	if [ -e "${gInstallPath}/office6/${gApp}" ] ; then
+		if [ -d /usr/lib32/gtk-2.0 ]; then
+			export GTK_PATH=/usr/lib32/gtk-2.0
+		fi
+		${gInstallPath}/office6/${gApp} ${gOpt} "$@" || ${gBinPath}/wps_error_check.sh ${gInstallPath}/office6/${gApp}
+	else
+		echo "${gApp} does not exist!"
+	fi
+}
+
+function main()
+{
+	parse_arg "$@"
+	run "$@"
+}
+
+main "$@"
